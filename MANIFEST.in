@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include traccar_erpnext *.css
+recursive-include traccar_erpnext *.csv
+recursive-include traccar_erpnext *.html
+recursive-include traccar_erpnext *.ico
+recursive-include traccar_erpnext *.js
+recursive-include traccar_erpnext *.json
+recursive-include traccar_erpnext *.md
+recursive-include traccar_erpnext *.png
+recursive-include traccar_erpnext *.py
+recursive-include traccar_erpnext *.svg
+recursive-include traccar_erpnext *.txt
+recursive-exclude traccar_erpnext *.pyc
