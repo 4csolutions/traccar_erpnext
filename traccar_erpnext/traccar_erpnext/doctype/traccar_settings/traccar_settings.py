@@ -36,7 +36,7 @@ class TraccarSettings(Document):
 				frappe.throw("Please enter correct username and password", exc=e, title="Invalid User Credentials")
 		except ApiException as e:
 			frappe.throw("Please check Server API URL", exc=e, title="Invalid Server URL")
-			
+
 	@frappe.whitelist()
 	def fetch_traccar_data(self):    				
 		frappe.publish_realtime("fetch_data_progress",
@@ -65,6 +65,8 @@ def create_traccar_groups(api_instance):
         # TODO check if user is admin/manager & accordingly change the api to get groups
         thread = api_instance.groups_get(all='all', async_req=True)
         traccar_groups = thread.get()
+        frappe.logger("frappe.web").debug("Traccar Groups:" + traccar_groups)
+
         total_records = len(traccar_groups)
         created_records = 0
         for group in traccar_groups:
@@ -72,7 +74,7 @@ def create_traccar_groups(api_instance):
                 'doctype': 'Traccar Group',
                 'traccar_group_name': group.name,
                 'group_id': group.id,
-                'parent_traccar_gorup': frappe.db.get_value('Traccar Group', {'group_id': group.group_id}, 'name')
+                'parent_traccar_gorup': frappe.db.get_value('Traccar Group', {'group_id': group.group_id}, 'name') if group.group_id else "All Groups"
             })            
             doc.insert()
             created_records += 1
@@ -85,6 +87,7 @@ def create_traccar_users(api_instance):
         # Fetch all Users
         thread = api_instance.users_get(async_req=True)
         traccar_users = thread.get()
+        frappe.logger("frappe.web").debug("Traccar Users:" + traccar_users)
         total_records = len(traccar_users)
         created_records = 0
         for user in traccar_users:
@@ -114,6 +117,7 @@ def create_traccar_devices(api_instance):
         # Fetch all Devices
         thread = api_instance.devices_get(async_req=True)
         traccar_devices = thread.get()
+        frappe.logger("frappe.web").debug("Traccar Devices:" + traccar_devices)
         total_records = len(traccar_devices)
         created_records = 0
         for device in traccar_devices:
