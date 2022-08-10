@@ -1,0 +1,101 @@
+{
+ "actions": [],
+ "creation": "2022-06-14 23:11:47.844725",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "traccar_server_details_section",
+  "server_url",
+  "adminmanager_details_section",
+  "admin_username",
+  "admin_password",
+  "column_break_6",
+  "user_id",
+  "traccar_test"
+ ],
+ "fields": [
+  {
+   "fieldname": "traccar_server_details_section",
+   "fieldtype": "Section Break",
+   "label": "Traccar Server Settings"
+  },
+  {
+   "description": "ex: \"http://demo.traccar.org/api\"",
+   "fieldname": "server_url",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Server API URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "adminmanager_details_section",
+   "fieldtype": "Section Break",
+   "label": "Admin/Manager Details"
+  },
+  {
+   "description": "Login Username/Email",
+   "fieldname": "admin_username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1
+  },
+  {
+   "fieldname": "admin_password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Int",
+   "label": "User ID",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "traccar_test",
+   "fieldtype": "Check",
+   "label": "Traccar Test"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-06-15 00:17:52.170471",
+ "modified_by": "Administrator",
+ "module": "Traccar Erpnext",
+ "name": "Traccar Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

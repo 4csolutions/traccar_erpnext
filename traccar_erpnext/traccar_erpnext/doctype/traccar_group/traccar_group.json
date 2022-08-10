@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:traccar_group_name",
+ "creation": "2022-06-14 23:14:44.133406",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "traccar_group_details_section",
+  "traccar_group_name",
+  "group_id",
+  "is_group",
+  "parent_traccar_group",
+  "lft",
+  "rgt",
+  "old_parent"
+ ],
+ "fields": [
+  {
+   "fieldname": "traccar_group_details_section",
+   "fieldtype": "Section Break",
+   "label": "Traccar Group Details"
+  },
+  {
+   "fieldname": "traccar_group_name",
+   "fieldtype": "Data",
+   "label": "Traccar Group Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "group_id",
+   "fieldtype": "Int",
+   "label": "Group ID",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "parent_traccar_group",
+   "fieldtype": "Link",
+   "label": "Parent Traccar Group",
+   "options": "Traccar Group"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "ignore_user_permissions": 1,
+   "label": "Old Parent",
+   "options": "Traccar Group",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_tree": 1,
+ "links": [],
+ "modified": "2022-06-14 23:14:44.133406",
+ "modified_by": "Administrator",
+ "module": "Traccar Erpnext",
+ "name": "Traccar Group",
+ "nsm_parent_field": "parent_traccar_group",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Partner",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

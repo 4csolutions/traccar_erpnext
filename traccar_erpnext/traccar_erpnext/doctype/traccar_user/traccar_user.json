@@ -1,0 +1,173 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:username",
+ "creation": "2022-06-14 23:14:01.868070",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user_details_section",
+  "full_name",
+  "phone",
+  "column_break_4",
+  "username",
+  "password",
+  "user_id",
+  "address_details_section",
+  "customer",
+  "customer_address",
+  "address",
+  "user_permissions_section",
+  "is_admin",
+  "readonly",
+  "device_readonly",
+  "device_limit",
+  "user_limit"
+ ],
+ "fields": [
+  {
+   "fieldname": "user_details_section",
+   "fieldtype": "Section Break",
+   "label": "User Details"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "username",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Username",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "in_list_view": 1,
+   "label": "Password",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Int",
+   "label": "User ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_details_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "user_permissions_section",
+   "fieldtype": "Section Break",
+   "label": "User Permissions"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_admin",
+   "fieldtype": "Check",
+   "label": "Is Admin"
+  },
+  {
+   "default": "0",
+   "fieldname": "readonly",
+   "fieldtype": "Check",
+   "label": "Readonly"
+  },
+  {
+   "default": "1",
+   "fieldname": "device_readonly",
+   "fieldtype": "Check",
+   "label": "Device Readonly"
+  },
+  {
+   "default": "0",
+   "fieldname": "device_limit",
+   "fieldtype": "Int",
+   "label": "Device Limit"
+  },
+  {
+   "default": "0",
+   "fieldname": "user_limit",
+   "fieldtype": "Int",
+   "label": "User Limit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Vehicle",
+   "link_fieldname": "traccar_user"
+  }
+ ],
+ "modified": "2022-06-14 23:14:01.868070",
+ "modified_by": "Administrator",
+ "module": "Traccar Erpnext",
+ "name": "Traccar User",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Partner",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "username",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
