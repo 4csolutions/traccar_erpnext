@@ -65,7 +65,7 @@ def create_traccar_groups(api_instance):
         # TODO check if user is admin/manager & accordingly change the api to get groups
         thread = api_instance.groups_get(all='all', async_req=True)
         traccar_groups = thread.get()
-        frappe.logger("frappe.web").debug("Traccar Groups:" + traccar_groups)
+        frappe.logger("frappe.web").debug({"Traccar Groups": traccar_groups})
 
         total_records = len(traccar_groups)
         created_records = 0
@@ -87,7 +87,7 @@ def create_traccar_users(api_instance):
         # Fetch all Users
         thread = api_instance.users_get(async_req=True)
         traccar_users = thread.get()
-        frappe.logger("frappe.web").debug("Traccar Users:" + traccar_users)
+        frappe.logger("frappe.web").debug({"Traccar Users": traccar_users})
         total_records = len(traccar_users)
         created_records = 0
         for user in traccar_users:
@@ -117,7 +117,7 @@ def create_traccar_devices(api_instance):
         # Fetch all Devices
         thread = api_instance.devices_get(async_req=True)
         traccar_devices = thread.get()
-        frappe.logger("frappe.web").debug("Traccar Devices:" + traccar_devices)
+        frappe.logger("frappe.web").debug({"Traccar Devices": traccar_devices})
         total_records = len(traccar_devices)
         created_records = 0
         for device in traccar_devices:
