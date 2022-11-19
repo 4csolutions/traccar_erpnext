@@ -125,12 +125,13 @@ def create_traccar_devices(api_instance):
                 'doctype': 'Vehicle',
                 'license_plate': device.name,
                 'model': device.model,
+                'make': device.model,
                 'category' : device.category.title(),                
                 'device_id': device.id,
                 'uniqueid' : frappe.get_value('Serial No', {'name': device.unique_id}, 'name'),
                 'phone' : frappe.get_value('Serial No', {'name': device.phone}, 'name'),
                 'traccar_group' : frappe.db.get_value('Traccar Group', {'group_id': device.group_id}, 'name')
-            })            
+            })
             doc.insert(ignore_mandatory=True)
             created_records += 1
             frappe.publish_realtime("fetch_data_progress", 

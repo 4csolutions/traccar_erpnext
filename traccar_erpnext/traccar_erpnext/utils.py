@@ -115,3 +115,18 @@ def get_device_location(device_id):
         return []
     except ApiException as e:
         frappe.throw(_("{0}: {1}").format(e.reason, e.body), exc=e, title="Fetch Device Location Failed")
+
+@frappe.whitelist()
+def update_all_vehicle_location():
+    try:
+        api_response = api_instance.positions_get()        
+        for position in api_response:
+            frappe.logger("frappe.web").debug({f"positions: {position}"})
+            vehicle = frappe.db.get_value("Vehicle", {'device_id': position.device_id}, "name")
+            frappe.db.set_value("Vehicle", vehicle, "latitude", position.latitude)
+            frappe.db.set_value("Vehicle", vehicle, "longitude", position.longitude)
+            # coords.append({"name": vehicle, "latitude": position.latitude, "longitude": position.longitude})
+        # out = convert_to_geojson("coordinates", coords)
+        # return out
+    except ApiException as e:
+        frappe.throw(_("{0}: {1}").format(e.reason, e.body), exc=e, title="Fetch All Locations Failed")

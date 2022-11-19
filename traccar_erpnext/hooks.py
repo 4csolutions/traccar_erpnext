@@ -36,6 +36,8 @@ app_license = "MIT"
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 doctype_js = {"Vehicle" : "public/js/vehicle.js"}
+doctype_list_js = {"Vehicle": "public/js/vehicle_map.js"}
+doctype_map_js = {"Vehicle": "public/js/vehicle_map_view.js"}
 
 # Home Pages
 # ----------
